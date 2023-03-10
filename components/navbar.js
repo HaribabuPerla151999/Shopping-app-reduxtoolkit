@@ -7,6 +7,7 @@ function navbar() {
     const dispatch=useDispatch()
     const totalCount=useSelector((state)=>state.CartReducer.cartValues.length)
     const totalAmount=useSelector((state)=>state.CartReducer.totalAmount)
+    const placePage=useSelector((state)=>state.CartReducer.placePage)
     
     const handlePlaceBtn=()=>{
         dispatch(placeCart())
@@ -20,8 +21,12 @@ function navbar() {
   return (
     <div className='bg-dark p-3 d-flex flex-row justify-content-center'>
         <button className='btn btn-primary me-1'>TotalItems:{totalCount}</button>
-        <button className='btn btn-primary me-1'>Total Amount : {totalAmount}</button>
-        <button className='btn btn-warning' onClick={handlePlaceBtn}>Place order</button>
+        <button className='btn btn-success me-1'>Total Amount : {totalAmount}</button>
+        {
+          placePage != 1 &&
+          <button className='btn btn-warning' onClick={handlePlaceBtn}>Place order</button>
+        }
+        
       
     </div>
   )
