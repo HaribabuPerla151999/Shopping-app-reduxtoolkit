@@ -3,7 +3,6 @@ import { createSlice} from "@reduxjs/toolkit";
 const initialState={
     cartValues:[],
     totalAmount:0,
-    placePage:0
 }
 
 const cartReducers=createSlice({
@@ -42,7 +41,8 @@ const cartReducers=createSlice({
       
     },
     placeCart:(state,action)=>{
-        state.placePage=1
+        state.cartValues=[]
+       
     },
     
   }

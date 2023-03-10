@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import  { incrementCart,decrementCart } from "../Redux/Reducers/shoppongCartReducers";
 import { useSelector } from 'react-redux';
 import Success from '@/pages/success';
+import Link from 'next/link';
 
 console.log("data",Data)
 
@@ -25,9 +26,7 @@ function main() {
     }
   return (
     
-       placePage == 1?
-       <Success/>
-       :
+      
        <div className='container-fluid bg-primary'>
        <div className='row align-items-start'>
        <h1 className='text-center text-decoration-underline text-warning w-100'>List of Mobiles</h1>
@@ -47,6 +46,7 @@ function main() {
                        </div>
                        <div className='card-footer text-center bg-dark'>
                          <button className='btn btn-primary me-1' onClick={()=>handleAddToCart(item)}>Add to cart</button>
+                         
                           <button className='btn btn-primary me-1' onClick={()=>handleRemoveFromCart(item)}>Remove from cart</button>
                      </div>
                     </div>
